@@ -21,12 +21,12 @@ from authentication import views as auth_view
 from notification import views as notification_view
 
 urlpatterns = [
-    path('', twitteruser_index_view.index_view, name='homepage'),
+    path('', twitteruser_index_view.IndexView.as_view(), name='homepage'),
     path('login/', auth_view.login_view, name="login_view"),
-    path('signup/', twitteruser_index_view.signup_view, name="signup_view"),
-    path('addtweet/', tweet_view.add_tweet, name="tweet_view"),
+    path('signup/', twitteruser_index_view.SignUpView.as_view(), name="signup_view"),
+    path('addtweet/', tweet_view.AddTweetView.as_view(), name="tweet_view"),
     #path('following/<int:follow_id>/', auth_view. ),
     #path('unfollowing/<int:unfollow_id>')
-    path('logout/', auth_view.logout_view),
+    path('logout/', auth_view.logout_view, name="logout_view"),
     path('admin/', admin.site.urls),
 ]
