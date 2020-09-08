@@ -1,0 +1,17 @@
+<h1>Twitter Clone</h1>
+<a href="/addtweet/"><button>Add Tweet!</button></a>
+
+{{ user.displayname }}
+<br>
+{% for tweeter in my_tweets %}
+    <ul>
+        {{ tweeter.tweet }}
+        <br>
+        {{ tweeter.tweet_author}}
+    </ul>
+{% endfor %}
+<br>
+<br>
+{{ Auth }}
+<br>
+<a href="logout/"><button type='button'>Logout!</button></a>
